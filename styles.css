@@ -1,96 +1,202 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autour du Wing Chun Kung Fu</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav class="top-nav" id="topNav">
-            <div class="social-links">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </nav>
-        
-        <nav class="main-nav">
-            <img src="logo.png" alt="Logo AWCKF" class="logo">
-            <div class="nav-links">
-                <a href="#accueil">Accueil</a>
-                <a href="#wing-chun">Wing Chun</a>
-                <a href="#entrainements">Entraînements</a>
-                <a href="association.html">Association</a>
-            </div>
-        </nav>
-    </header>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
-        <section id="accueil">
-            <div class="section-content">
-                <h2>Association</h2>
-		<h1>Autour du Wing Chun Kung Fu</h1>
-		<h2>Boxe Wing Chun | Esvres sur Indre</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <img src="" alt="">
-                        <h3>Inscription</h3>
-                        <a href="#nous-rejoindre" class="btn">Inscription</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+:root {
+    --primary-color: #687279;
+    --secondary-color: #d81c22;
+    --text-color: #000000;
+    --light-bg: #f4f4f4;
+}
 
-        <section id="wing-chun">
-            <div class="section-content">
-                <h2>Le Wing Chun</h2>
-                <div class="grid-container">
-                    <div class="card">
-                        <h3>Les origines du Wing Chun</h3>
-                        <p>e Wing Chun est une boxe Chinoise. Littéralement : « la boxe du printemps radieux ». C’est un style de Kung Fu qui prend naissance en Chine quelque part au cours du XVIIe siècle. L’histoire de la …</p>
-                    </div>
-                    <div class="card">
-                        <h3>Le système Wing Chun</h3>
-                        <p>La Chine répertorie aujourd’hui plusieurs centaines de styles de Kung Fu différents. Les classifications ne manquent pas non plus. Les styles du nord, ceux du sud, les styles …</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+body {
+    font-family: 'Abhaya Libre', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
 
-        <section id="entrainements">
-            <div class="section-content">
-                <h2>Entraînements</h2>
-                <div class="schedule">
-                    <div class="schedule-item">
-                        <span>Mercredi</span>
-                        <span>20h00 - 22h00</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span>Samedi</span>
-                        <span>10h00 - 12h00</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+/* Top Navigation */
+.top-nav {
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: transform 0.3s;
+}
 
-    <script>
-        let lastScroll = 0;
-        const topNav = document.getElementById('topNav');
+.top-nav.hidden {
+    transform: translateY(-100%);
+}
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > lastScroll) {
-                topNav.classList.add('hidden');
-            } else {
-                topNav.classList.remove('hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
-    </script>
-</body>
-</html>
+.social-links {
+    text-align: right;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.2em;
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Main Content */
+main {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    position: relative;
+}
+
+section:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #a93226;
+}
+
+.schedule {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        top: 0;
+    }
+    
+    .nav-links {
+        margin-top: 10px;
+    }
+    
+    .nav-links a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    main {
+        margin-top: 140px;
+    }
+}
