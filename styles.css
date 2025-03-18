@@ -1,144 +1,96 @@
-/* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autour du Wing Chun Kung Fu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="top-nav" id="topNav">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+        
+        <nav class="main-nav">
+            <img src="logo.png" alt="Logo AWCKF" class="logo">
+            <div class="nav-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#wing-chun">Wing Chun</a>
+                <a href="#entrainements">Entraînements</a>
+                <a href="association.html">Association</a>
+            </div>
+        </nav>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
+    <main>
+        <section id="accueil">
+            <div class="section-content">
+                <h2>Association</h2>
+		<h1>Autour du Wing Chun Kung Fu</h1>
+		<h2>Boxe Wing Chun | Esvres sur Indre</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <img src="" alt="">
+                        <h3>Inscription</h3>
+                        <a href="#nous-rejoindre" class="btn">Inscription</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-/* Header et Navigation */
-header {
-    width: 100%;
-}
+        <section id="wing-chun">
+            <div class="section-content">
+                <h2>Le Wing Chun</h2>
+                <div class="grid-container">
+                    <div class="card">
+                        <h3>Les origines du Wing Chun</h3>
+                        <p>e Wing Chun est une boxe Chinoise. Littéralement : « la boxe du printemps radieux ». C’est un style de Kung Fu qui prend naissance en Chine quelque part au cours du XVIIe siècle. L’histoire de la …</p>
+                    </div>
+                    <div class="card">
+                        <h3>Le système Wing Chun</h3>
+                        <p>La Chine répertorie aujourd’hui plusieurs centaines de styles de Kung Fu différents. Les classifications ne manquent pas non plus. Les styles du nord, ceux du sud, les styles …</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-/* Top Navigation */
-.top-nav {
-    background-color: #333;
-    height: 40px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1001;
-    transition: transform 0.3s ease-in-out;
-}
+        <section id="entrainements">
+            <div class="section-content">
+                <h2>Entraînements</h2>
+                <div class="schedule">
+                    <div class="schedule-item">
+                        <span>Mercredi</span>
+                        <span>20h00 - 22h00</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span>Samedi</span>
+                        <span>10h00 - 12h00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-/* Gestion du scroll pour top-nav */
-@media (prefers-reduced-motion: no-preference) {
-    .top-nav {
-        transition: transform 0.3s ease-in-out;
-    }
-}
+    <script>
+        let lastScroll = 0;
+        const topNav = document.getElementById('topNav');
 
-/* Cache la top-nav uniquement lors du scroll vers le bas */
-html[data-scroll-direction="down"] .top-nav {
-    transform: translateY(-100%);
-}
-
-.social-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 1.2em;
-}
-
-.social-links a:hover {
-    color: #ddd;
-}
-
-/* Main Navigation */
-.main-nav {
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    top: 40px;
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-/* Ajustement de la main-nav lors du scroll */
-html[data-scroll-direction="down"] .main-nav {
-    top: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.logo img {
-    height: 60px;
-    width: auto;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.nav-links a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #007bff;
-}
-
-/* Main Content */
-main {
-    padding-top: 120px;
-}
-
-section {
-    min-height: 100vh;
-    padding: 40px 20px;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .main-nav {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    main {
-        padding-top: 160px;
-    }
-}
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll) {
+                topNav.classList.add('hidden');
+            } else {
+                topNav.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
