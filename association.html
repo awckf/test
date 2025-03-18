@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Association - Wing Chun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="top-nav" id="topNav">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </nav>
+        
+        <nav class="main-nav">
+            <img src="images/logo.png" alt="Logo Wing Chun" class="logo">
+            <div class="nav-links">
+                <a href="index.html#accueil">Accueil</a>
+                <a href="index.html#wing-chun">Wing Chun</a>
+                <a href="index.html#entrainements">Entraînements</a>
+                <a href="association.html">Association</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Notre Association</h1>
+            <!-- Contenu de la page Association -->
+        </section>
+    </main>
+
+    <script>
+        let lastScroll = 0;
+        const topNav = document.getElementById('topNav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > lastScroll) {
+                topNav.classList.add('hidden');
+            } else {
+                topNav.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
